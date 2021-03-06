@@ -1,39 +1,41 @@
 ﻿using System;
 
-namespace racional
+namespace dados
 {
-    public class Racional{     
-        private double variables1, variables2; 
-        double suma, resta, opuesto,opuesto2, inverso1, inverso2;       
-        
-        public Racional(double v1, double v2){
-            variables1 = v1;
-            variables2 = v2;
-            suma = v1 + v2;
-            resta = v1 - v2;
-            opuesto = -(v1);
-            opuesto2 = -(v2);
-            inverso1 = variables1 + (-variables1);
-            inverso2 = variables2 + (-variables2);
+    public class dados{
+        int lados;
+
+    public void Mlados(){
+        Random azar = new Random();
+        int num = azar.Next(1,7);
+        Console.WriteLine("El primer valor es {0}",num);
+
+        Random azar1 = new Random();
+        int num1 = azar1.Next(1,7);
+        Console.WriteLine("EL sengundo valor es {0}", num1);
+
+        Random azar2 = new Random();
+        int num2 = azar2.Next(1,7);
+        Console.WriteLine("El tercer valor es {0}",num2);
+
+        if((num == num1)&&(num1 == num2)){
+            Console.WriteLine("Haz Ganado");
         }
-        public void MostrarEstado(){
-            Console.WriteLine("La suma total de los numeros {0} y {1} es de: {2}",variables1, variables2, suma);
-            Console.WriteLine("La resta total de los numeros {0} y {1} es de: {2}", variables1, variables2,resta);
-            Console.WriteLine("El opuesto del numero {0} es: {1} y el oputesto de {2} es {3}",variables1, opuesto,variables2,opuesto2);
-            Console.WriteLine("El inverso aditivo de {0} es de {1}", variables1, inverso1);
-            Console.WriteLine("El inverso aditivo de {0} es de {1}", variables2, inverso2);
-            Console.WriteLine("Los valores tomados fueron {0} y {1}", variables1, variables2);
+        else{
+         Console.WriteLine("Haz perdido");
         }
-        }
+    }
+    }
     class Program
     {
+        /*Crear una nueva solución de tipo Consola que permita jugar a los dados.
+        Las reglas de juego son: se tiran tres(3) dados silostres salen con el 
+        mismo valor mostrar un mensaje que "gano", sino "perdió".*/
+
         static void Main(string[] args)
-        /*Elaborar una clase RACIONAL que modele los números racionales implementando
-        al menos las operaciones de suma, resta, opuesto e inverso de un número 
-        racional a imitación de la suma o resta de los números reales o enteros.*/
         {
-            Racional r = new Racional(200,100);
-            r.MostrarEstado();
+            dados d = new dados();
+            d.Mlados();
         }
     }
 }

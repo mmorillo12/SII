@@ -1,38 +1,39 @@
 ﻿using System;
 
-namespace alumno
+namespace racional
 {
-    public class alumno{
-    string nombre;
-    int edad;
-    
-    public alumno(){
-        Console.WriteLine("Ingrese el nombre del Alumno: ");
-        nombre = Console.ReadLine();
-        Console.WriteLine("Ingrese la edad del Alumno: ");
-        edad = int.Parse(Console.ReadLine());
-    }
-    public void Mostrar(){
-        Console.WriteLine("El nombre del alumno es: {0}",nombre);
-        Console.WriteLine("{0} tiene {1} años",nombre, edad);
-        if(edad >=18){
-        Console.WriteLine("El estudiante es mayor de edad");
+    public class Racional{     
+        private double variables1, variables2; 
+        double suma, resta, opuesto,opuesto2, inverso1, inverso2;       
+        
+        public Racional(double v1, double v2){
+            variables1 = v1;
+            variables2 = v2;
+            suma = v1 + v2;
+            resta = v1 - v2;
+            opuesto = -(v1);
+            opuesto2 = -(v2);
+            inverso1 = variables1 + (-variables1);
+            inverso2 = variables2 + (-variables2);
         }
-        else{
-            Console.WriteLine("El estudiante es menor de edad");
+        public void MostrarEstado(){
+            Console.WriteLine("La suma total de los numeros {0} y {1} es de: {2}",variables1, variables2, suma);
+            Console.WriteLine("La resta total de los numeros {0} y {1} es de: {2}", variables1, variables2,resta);
+            Console.WriteLine("El opuesto del numero {0} es: {1} y el oputesto de {2} es {3}",variables1, opuesto,variables2,opuesto2);
+            Console.WriteLine("El inverso aditivo de {0} es de {1}", variables1, inverso1);
+            Console.WriteLine("El inverso aditivo de {0} es de {1}", variables2, inverso2);
+            Console.WriteLine("Los valores tomados fueron {0} y {1}", variables1, variables2);
         }
-    }
-}
+        }
     class Program
     {
-        /*Crear una nueva solución de tipo Consola. Plantear una clase llamada Alumno y 
-        definir como atributos su nombre y su edad. En el constructor realizar el ingreso de datos. Definir 
-        otros dos métodos para imprimir los datos ingresados y un mensaje si es mayor o no de
-         edad(edad>=18)*/
         static void Main(string[] args)
+        /*Elaborar una clase RACIONAL que modele los números racionales implementando
+        al menos las operaciones de suma, resta, opuesto e inverso de un número 
+        racional a imitación de la suma o resta de los números reales o enteros.*/
         {
-            alumno a = new alumno();
-            a.Mostrar();
+            Racional r = new Racional(200,100);
+            r.MostrarEstado();
         }
     }
 }

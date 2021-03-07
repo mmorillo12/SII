@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace alumno
 {
@@ -15,6 +15,8 @@ namespace alumno
     public void Mostrar(){
         Console.WriteLine("El nombre del alumno es: {0}",nombre);
         Console.WriteLine("{0} tiene {1} años",nombre, edad);
+    }
+    public void MostrarEdad(){
         if(edad >=18){
         Console.WriteLine("El estudiante es mayor de edad");
         }
@@ -33,6 +35,7 @@ namespace alumno
         {
             alumno a = new alumno();
             a.Mostrar();
+            a.MostrarEdad();
         }
     }
 }
